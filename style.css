@@ -1,0 +1,1450 @@
+/* =========================================
+   ОСНОВНЫЕ НАСТРОЙКИ
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background: #000000;
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   НЕОНОВЫЕ ПЕРЕМЕННЫЕ
+========================================= */
+
+:root {
+    --white: #ffffff;
+    --soft-white: #e8e8e8;
+    --gray: #9a9a9a;
+
+    --neon: #ffffff;
+
+    --black: #000000;
+    --dark: #080808;
+    --dark-gray: #111111;
+}
+
+
+/* =========================================
+   КНОПКИ
+========================================= */
+
+.button {
+    display: block;
+
+    width: fit-content;
+
+    margin: 45px auto 0;
+
+    padding: 14px 32px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    border: 1px solid #ffffff;
+
+    border-radius: 5px;
+
+    background: transparent;
+
+    box-shadow:
+        0 0 5px #ffffff,
+        inset 0 0 5px rgba(255, 255, 255, 0.15);
+
+    transition:
+        0.3s ease;
+}
+
+.button:hover {
+    background: #ffffff;
+
+    color: #000000;
+
+    box-shadow:
+        0 0 10px #ffffff,
+        0 0 30px #ffffff,
+        0 0 60px rgba(255, 255, 255, 0.7);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   ПЕРВАЯ СТРАНИЦА
+========================================= */
+
+.home-page {
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #111111 0%,
+            #050505 35%,
+            #000000 70%
+        );
+}
+
+.home-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 750px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    animation: pageAppear 1.5s ease forwards;
+}
+
+
+/* =========================================
+   ГЛАВНОЕ СЕРДЦЕ
+========================================= */
+
+.main-heart {
+    margin-bottom: 30px;
+
+    font-size: 75px;
+
+    filter:
+        drop-shadow(0 0 5px white)
+        drop-shadow(0 0 15px white)
+        drop-shadow(0 0 30px rgba(255, 255, 255, 0.7));
+
+    animation:
+        heartPulse 2s ease-in-out infinite,
+        neonFlicker 5s infinite;
+}
+
+
+/* =========================================
+   ЗАГОЛОВОК
+========================================= */
+
+.home-container h1 {
+    font-size: 36px;
+
+    font-weight: normal;
+
+    line-height: 1.35;
+
+    margin-bottom: 22px;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+.home-subtitle {
+    color: #dddddd;
+
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.6);
+}
+
+
+/* =========================================
+   ПЛАВАЮЩИЕ СЕРДЦА
+========================================= */
+
+.floating-heart {
+    position: absolute;
+
+    bottom: -50px;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    opacity: 0;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px white,
+        0 0 30px white;
+
+    animation: floatingHeart 10s linear infinite;
+}
+
+.heart-1 {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.heart-2 {
+    left: 30%;
+    animation-delay: 3s;
+}
+
+.heart-3 {
+    left: 60%;
+    animation-delay: 1.5s;
+}
+
+.heart-4 {
+    left: 85%;
+    animation-delay: 5s;
+}
+
+
+/* =========================================
+   СТРАНИЦЫ С ТЕКСТОМ
+========================================= */
+
+.text-page {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    padding: 70px 25px;
+
+    animation: pageAppear 1s ease forwards;
+}
+
+.text-page h1 {
+    text-align: center;
+
+    font-size: 38px;
+
+    font-weight: normal;
+
+    line-height: 1.3;
+
+    margin-bottom: 50px;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.text-page p {
+    color: #dddddd;
+
+    font-size: 18px;
+
+    line-height: 1.85;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   СВЕТЯЩЕЕСЯ СЕРДЦЕ
+========================================= */
+
+.page-heart {
+    text-align: center;
+
+    margin: 45px 0;
+
+    font-size: 50px;
+
+    filter:
+        drop-shadow(0 0 5px white)
+        drop-shadow(0 0 15px white)
+        drop-shadow(0 0 30px white);
+
+    animation: heartPulse 2s infinite;
+}
+
+
+/* =========================================
+   ФИНАЛЬНЫЙ ТЕКСТ
+========================================= */
+
+.ending {
+    text-align: center;
+
+    color: #ffffff !important;
+
+    font-size: 24px !important;
+
+    line-height: 1.7 !important;
+
+    margin-top: 50px;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+
+/* =========================================
+   СТРАНИЦА "ЗА ЧТО Я ТЕБЯ ЛЮБЛЮ"
+========================================= */
+
+.reasons-page h1 {
+    margin-bottom: 15px;
+}
+
+.reasons-subtitle {
+    text-align: center;
+
+    color: #999999 !important;
+
+    margin-bottom: 45px !important;
+}
+
+
+/* =========================================
+   КАРТОЧКИ
+========================================= */
+
+.reasons {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+.reason {
+    position: relative;
+
+    padding: 22px 18px;
+
+    background: #050505;
+
+    border: 1px solid #444444;
+
+    border-radius: 4px;
+
+    color: #ffffff;
+
+    font-size: 19px;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 5px rgba(255, 255, 255, 0.15);
+
+    transition:
+        0.35s ease;
+
+    animation: cardAppear 0.8s ease both;
+}
+
+
+/* задержка для карточек */
+
+.reason:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.reason:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.reason:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.reason:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.reason:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.reason:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.reason:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.reason:nth-child(8) {
+    animation-delay: 0.8s;
+}
+
+.reason:nth-child(9) {
+    animation-delay: 0.9s;
+}
+
+
+/* наведение */
+
+.reason:hover {
+    transform: translateY(-5px);
+
+    border-color: #ffffff;
+
+    background: #101010;
+
+    box-shadow:
+        0 0 5px white,
+        0 0 15px rgba(255, 255, 255, 0.5),
+        inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================
+   ОСОБЕННАЯ ФРАЗА
+========================================= */
+
+.special-reason {
+    position: relative;
+
+    margin-top: 40px;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    font-size: 26px;
+
+    line-height: 1.5;
+
+    background: #050505;
+
+    border: 1px solid #ffffff;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 0 5px white,
+        0 0 15px rgba(255, 255, 255, 0.5),
+        inset 0 0 20px rgba(255, 255, 255, 0.04);
+
+    animation: neonBox 3s ease-in-out infinite;
+}
+
+.special-reason span {
+    display: block;
+
+    margin-top: 16px;
+
+    color: #999999;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   ФИНАЛЬНАЯ ФРАЗА
+========================================= */
+
+.final-love {
+    text-align: center;
+
+    color: #ffffff !important;
+
+    font-size: 24px !important;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+
+/* =========================================
+   АНИМАЦИИ
+========================================= */
+
+@keyframes pageAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes heartPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+
+        filter:
+            drop-shadow(0 0 5px white)
+            drop-shadow(0 0 15px white);
+    }
+
+    50% {
+        transform: scale(1.12);
+
+        filter:
+            drop-shadow(0 0 8px white)
+            drop-shadow(0 0 25px white)
+            drop-shadow(0 0 45px white);
+    }
+}
+
+
+@keyframes floatingHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            rotate(25deg);
+
+        opacity: 0.5;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(-25deg);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes neonFlicker {
+
+    0%,
+    18%,
+    20%,
+    22%,
+    60%,
+    62%,
+    100% {
+        opacity: 1;
+    }
+
+    19%,
+    21%,
+    61% {
+        opacity: 0.7;
+    }
+}
+
+
+@keyframes neonBox {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 5px white,
+            0 0 15px rgba(255, 255, 255, 0.35);
+    }
+
+    50% {
+        box-shadow:
+            0 0 8px white,
+            0 0 25px rgba(255, 255, 255, 0.7),
+            0 0 45px rgba(255, 255, 255, 0.2);
+    }
+}
+
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   МОБИЛЬНЫЕ УСТРОЙСТВА
+========================================= */
+
+@media (max-width: 600px) {
+
+    .home-container {
+        padding: 25px;
+    }
+
+    .main-heart {
+        font-size: 60px;
+    }
+
+    .home-container h1 {
+        font-size: 28px;
+    }
+
+    .home-subtitle {
+        font-size: 18px;
+    }
+
+    .text-page {
+        padding: 50px 20px;
+    }
+
+    .text-page h1 {
+        font-size: 30px;
+    }
+
+    .text-page p {
+        font-size: 17px;
+
+        line-height: 1.75;
+    }
+
+    .reason {
+        font-size: 17px;
+
+        padding: 20px 15px;
+    }
+
+    .special-reason {
+        font-size: 22px;
+    }
+
+    .button {
+        padding: 13px 27px;
+    }
+}
+/* =========================================
+   ФИНАЛЬНАЯ СТРАНИЦА
+========================================= */
+
+.final-page {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #151515 0%,
+            #050505 45%,
+            #000000 80%
+        );
+}
+
+
+/* =========================================
+   ФИНАЛЬНЫЙ ТЕКСТ
+========================================= */
+
+.final-content {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+
+    max-width: 700px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    animation: finalAppear 2s ease forwards;
+}
+
+
+.final-big-heart {
+
+    font-size: 80px;
+
+    margin-bottom: 25px;
+
+    filter:
+        drop-shadow(0 0 5px white)
+        drop-shadow(0 0 15px white)
+        drop-shadow(0 0 35px white);
+
+    animation:
+        finalHeartPulse 2s ease-in-out infinite;
+}
+
+
+.final-content h1 {
+
+    font-size: 42px;
+
+    font-weight: normal;
+
+    line-height: 1.25;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px white,
+        0 0 35px rgba(255,255,255,0.7);
+
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+
+.final-line {
+
+    width: 120px;
+
+    height: 1px;
+
+    background: white;
+
+    margin: 30px auto;
+
+    box-shadow:
+        0 0 5px white,
+        0 0 15px white;
+}
+
+
+.final-content p {
+
+    color: #dddddd;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 5px rgba(255,255,255,0.4);
+}
+
+
+.final-signature {
+
+    margin-top: 35px;
+
+    font-size: 25px;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px white;
+}
+
+
+/* =========================================
+   САЛЮТ
+========================================= */
+
+.firework {
+
+    position: absolute;
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 5px white,
+        0 0 15px white,
+        0 0 30px white;
+
+    animation: firework 3s infinite;
+}
+
+
+.firework span {
+
+    position: absolute;
+
+    width: 4px;
+
+    height: 4px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 20px white;
+
+    animation: sparks 1.5s infinite;
+}
+
+
+.firework-1 {
+
+    top: 20%;
+
+    left: 15%;
+
+    animation-delay: 0s;
+}
+
+
+.firework-2 {
+
+    top: 25%;
+
+    right: 15%;
+
+    animation-delay: 1s;
+}
+
+
+.firework-3 {
+
+    top: 65%;
+
+    left: 10%;
+
+    animation-delay: 2s;
+}
+
+
+.firework-4 {
+
+    top: 65%;
+
+    right: 10%;
+
+    animation-delay: 1.5s;
+}
+
+
+/* =========================================
+   ЛЕТАЮЩИЕ СЕРДЦА
+========================================= */
+
+.final-heart {
+
+    position: absolute;
+
+    bottom: -60px;
+
+    color: white;
+
+    font-size: 22px;
+
+    opacity: 0;
+
+    z-index: 3;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px white,
+        0 0 30px white;
+
+    animation: finalHeartFloat 8s linear infinite;
+}
+
+
+.final-heart.h1 {
+
+    left: 5%;
+
+    animation-delay: 0s;
+}
+
+
+.final-heart.h2 {
+
+    left: 18%;
+
+    animation-delay: 2s;
+}
+
+
+.final-heart.h3 {
+
+    left: 35%;
+
+    animation-delay: 4s;
+}
+
+
+.final-heart.h4 {
+
+    left: 52%;
+
+    animation-delay: 1s;
+}
+
+
+.final-heart.h5 {
+
+    left: 70%;
+
+    animation-delay: 3s;
+}
+
+
+.final-heart.h6 {
+
+    left: 85%;
+
+    animation-delay: 5s;
+}
+
+
+.final-heart.h7 {
+
+    left: 95%;
+
+    animation-delay: 6s;
+}
+
+
+/* =========================================
+   АНИМАЦИИ ФИНАЛА
+========================================= */
+
+@keyframes finalAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.8)
+            translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+    }
+}
+
+
+@keyframes finalHeartPulse {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+        filter:
+            drop-shadow(0 0 5px white)
+            drop-shadow(0 0 15px white);
+
+    }
+
+    50% {
+
+        transform: scale(1.18);
+
+        filter:
+            drop-shadow(0 0 10px white)
+            drop-shadow(0 0 30px white)
+            drop-shadow(0 0 55px white);
+
+    }
+}
+
+
+@keyframes titleGlow {
+
+    0%,
+    100% {
+
+        text-shadow:
+            0 0 5px white,
+            0 0 15px white;
+
+    }
+
+    50% {
+
+        text-shadow:
+            0 0 5px white,
+            0 0 20px white,
+            0 0 40px white;
+
+    }
+}
+
+
+@keyframes finalHeartFloat {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(0.7);
+
+        opacity: 0;
+
+    }
+
+    15% {
+
+        opacity: 0.8;
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-50vh)
+            rotate(20deg)
+            scale(1);
+
+        opacity: 0.7;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-115vh)
+            rotate(-20deg)
+            scale(1.3);
+
+        opacity: 0;
+
+    }
+}
+
+
+@keyframes firework {
+
+    0% {
+
+        transform: scale(0);
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+    45% {
+
+        transform: scale(25);
+
+        opacity: 0;
+
+    }
+
+    100% {
+
+        transform: scale(25);
+
+        opacity: 0;
+
+    }
+}
+
+
+@keyframes sparks {
+
+    0% {
+
+        transform: scale(0);
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform: scale(20);
+
+        opacity: 0;
+
+    }
+}
+
+
+/* =========================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+========================================= */
+
+@media (max-width: 600px) {
+
+    .final-content {
+
+        padding: 25px;
+
+    }
+
+    .final-big-heart {
+
+        font-size: 65px;
+
+    }
+
+    .final-content h1 {
+
+        font-size: 34px;
+
+    }
+
+    .final-content p {
+
+        font-size: 17px;
+
+    }
+
+    .final-signature {
+
+        font-size: 22px;
+
+    }
+
+}
+
+/* =========================================
+   LOVE PAGE
+========================================= */
+
+.love-page {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #111111 0%,
+            #050505 45%,
+            #000000 80%
+        );
+
+    overflow: hidden;
+}
+
+
+/* Каждый экран */
+
+.love-screen {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(0.9);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+
+}
+
+
+/* Активный экран */
+
+.love-screen.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+
+}
+
+
+/* Сердце */
+
+.love-heart {
+
+    margin-bottom: 35px;
+
+    font-size: 70px;
+
+    color: white;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px white,
+        0 0 35px white;
+
+    animation:
+        heartPulse 2s ease-in-out infinite;
+}
+
+
+/* Текст */
+
+.love-screen h1 {
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 42px;
+
+    font-weight: normal;
+
+    line-height: 1.3;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px white,
+        0 0 30px rgba(255,255,255,0.7);
+
+}
+
+
+/* Кнопка */
+
+.next-button {
+
+    margin-top: 45px;
+
+    padding: 14px 32px;
+
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid white;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 5px white,
+        inset 0 0 5px rgba(255,255,255,0.1);
+
+    transition:
+        0.3s ease;
+}
+
+
+.next-button:hover {
+
+    background: white;
+
+    color: black;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 25px white,
+        0 0 50px rgba(255,255,255,0.6);
+
+    transform: scale(1.05);
+
+}
+
+
+/* =========================================
+   ОЧЕНЬ СИЛЬНО
+========================================= */
+
+.extreme-love h1 {
+
+    font-size: 65px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    animation:
+        extremeGlow 2s ease-in-out infinite;
+
+}
+
+
+.extreme-love .love-heart {
+
+    font-size: 80px;
+
+}
+
+
+/* =========================================
+   АНИМАЦИИ
+========================================= */
+
+@keyframes extremeGlow {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+        text-shadow:
+            0 0 5px white,
+            0 0 15px white;
+
+    }
+
+    50% {
+
+        transform: scale(1.06);
+
+        text-shadow:
+            0 0 5px white,
+            0 0 20px white,
+            0 0 40px white,
+            0 0 70px rgba(255,255,255,0.5);
+
+    }
+
+}
+
+
+@keyframes heartPulse {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+        filter:
+            drop-shadow(0 0 5px white)
+            drop-shadow(0 0 15px white);
+
+    }
+
+    50% {
+
+        transform: scale(1.15);
+
+        filter:
+            drop-shadow(0 0 10px white)
+            drop-shadow(0 0 30px white)
+            drop-shadow(0 0 50px white);
+
+    }
+
+}
+
+
+/* =========================================
+   ТЕЛЕФОН
+========================================= */
+
+@media (max-width: 600px) {
+
+    .love-screen h1 {
+
+        font-size: 34px;
+
+    }
+
+    .extreme-love h1 {
+
+        font-size: 48px;
+
+    }
+
+    .love-heart {
+
+        font-size: 58px;
+
+    }
+
+}

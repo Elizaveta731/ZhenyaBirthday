@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Для тебя ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="love-page">
+
+    <!-- ЭКРАН 1 -->
+
+    <section class="love-screen active">
+
+        <div class="love-heart">♡</div>
+
+        <h1>
+            Я тебя люблю
+        </h1>
+
+        <button class="next-button">
+            Дальше
+        </button>
+
+    </section>
+
+
+    <!-- ЭКРАН 2 -->
+
+    <section class="love-screen">
+
+        <div class="love-heart">♡</div>
+
+        <h1>
+            Очень сильно
+        </h1>
+
+        <button class="next-button">
+            Дальше
+        </button>
+
+    </section>
+
+
+    <!-- ЭКРАН 3 -->
+
+    <section class="love-screen">
+
+        <div class="love-heart">♡</div>
+
+        <h1>
+            Нет, ты не понял...
+        </h1>
+
+        <button class="next-button">
+            Дальше
+        </button>
+
+    </section>
+
+
+    <!-- ЭКРАН 4 -->
+
+    <section class="love-screen extreme-love">
+
+        <div class="love-heart">
+            ❤️
+        </div>
+
+        <h1>
+            ОЧЕНЬ<br>
+            СИЛЬНО
+        </h1>
+
+        <button class="next-button">
+            Дальше ❤️
+        </button>
+
+    </section>
+
+
+    <script>
+
+        const screens = document.querySelectorAll(".love-screen");
+
+        const buttons = document.querySelectorAll(".next-button");
+
+        let currentScreen = 0;
+
+
+        buttons.forEach((button) => {
+
+            button.addEventListener("click", () => {
+
+                screens[currentScreen].classList.remove("active");
+
+                currentScreen++;
+
+                if (currentScreen < screens.length) {
+
+                    screens[currentScreen].classList.add("active");
+
+                } else {
+
+                    window.location.href = "final.html";
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
